@@ -1,15 +1,17 @@
+require('dotenv').config();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const moment = require('moment');
 const { getCoffees } = require('./clients/coffee-client');
-require('dotenv').config();
 
 const app = express();
 const start = moment('2020-12-01');
 const today = process.env.FAKE_TODAY ? moment(process.env.FAKE_TODAY) : moment();
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 

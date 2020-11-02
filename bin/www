@@ -90,5 +90,5 @@ function onListening() {
 
   debug('Listening on ' + bind);
 
-  process.send & process.send('online');
+  process.send && process.send('online');
 }

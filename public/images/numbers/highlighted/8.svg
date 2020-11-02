@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="57px" viewBox="0 0 37 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8</title>
+    <defs>
+        <path d="M65.956,902.088 C75.884,902.088 83.908,894.404 83.908,884.952 C83.908,874.48 78.264,870.604 72.076,867 C76.496,864.416 80.1,860.948 80.1,856.596 C80.1,850.068 74.66,847.416 67.588,847.416 C57.796,847.416 51.948,852.924 51.948,861.492 C51.948,866.864 53.58,870.468 59.428,874.82 C57.796,875.432 49.092,879.716 49.092,888.216 C49.092,900.116 60.176,902.088 65.956,902.088 Z M70.036,865.776 C67.18,864.144 61.468,861.9 61.468,856.596 C61.468,851.7 65.14,849.048 68.2,849.048 C72.212,849.048 74.116,852.448 74.116,856.596 C74.116,859.656 72.008,864.144 70.036,865.776 Z M65.752,900.456 C60.312,900.456 57.796,894.608 57.796,888.216 C57.796,883.116 59.088,879.648 61.876,876.384 C61.876,876.384 62.0640064,876.467232 62.3948977,876.629936 L62.6361648,876.750137 C65.4249109,878.156993 74.932,883.54032 74.932,891.548 C74.932,896.58 70.376,900.456 65.752,900.456 Z" id="path-1"></path>
+        <filter x="-8.6%" y="-3.7%" width="111.5%" height="105.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-2" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-12-Pro-Max" transform="translate(-47.000000, -846.000000)" fill-rule="nonzero">
+            <g id="8">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#000000" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

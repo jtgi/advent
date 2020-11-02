@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/advent.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body
+    block content
+    script(src="#{process.env.BROWSER_REFRESH_URL}")
+    script(src="https://code.jquery.com/jquery-1.9.1.min.js")
+    script(src="/javascripts/advent.js")
+

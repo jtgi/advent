@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="57px" viewBox="0 0 75 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>23</title>
+    <defs>
+        <path d="M274.312,786 L274.312,775.188 L274.04,775.188 C273.496,776.14 272.136,776.888 271.252,776.888 L255.204,776.888 L255.204,776.616 C260.44,772.74 275.876,758.188 275.876,745.88 C275.876,733.436 265.336,732.416 261.392,732.416 C253.096,732.416 249.016,737.176 245.616,744.52 L245.616,746.152 C247.52,743.432 250.512,740.984 255.068,740.984 C260.984,740.984 264.044,745.472 264.044,750.572 C264.044,760.636 250.104,778.656 244.188,785.728 L244.188,786 L274.312,786 Z M299.132,787.088 C309.74,787.088 316.676,779.2 316.676,768.864 C316.676,757.168 309.468,752.272 302.94,749.96 L315.928,733.776 L315.928,733.504 L288.048,733.504 L288.048,744.792 L288.32,744.792 C288.796,743.84 290.496,743.296 291.72,743.296 L306.136,743.296 L293.692,757.984 L293.692,758.256 C298.52,759.004 304.844,760.84 304.844,770.7 C304.844,779.336 298.316,782.192 295.256,782.192 C290.156,782.192 284.376,777.092 281.928,773.012 L281.928,775.052 C285.872,781.648 289.272,787.088 299.132,787.088 Z" id="path-1"></path>
+        <filter x="-4.1%" y="-3.7%" width="105.5%" height="105.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-2" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-12-Pro-Max" transform="translate(-242.000000, -731.000000)" fill-rule="nonzero">
+            <g id="23">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#000000" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

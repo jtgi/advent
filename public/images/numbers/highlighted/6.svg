@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="57px" viewBox="0 0 37 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>6</title>
+    <defs>
+        <path d="M66.568,672.088 C78.604,672.088 83.772,660.868 83.772,652.096 C83.772,638.496 76.02,633.328 71.124,633.328 C69.288,633.328 64.392,634.62 62.148,638.02 L61.876,638.02 C62.76,628.024 68.744,619.932 74.116,617.824 L74.116,617.416 C59.02,617.416 49.228,636.116 49.228,647.676 C49.228,657.74 53.24,672.088 66.568,672.088 Z M66.568,670.456 C62.5431351,670.456 61.8931738,659.934242 61.8763423,652.403753 L61.876,652.096 C61.876,645.432 62.964,637.408 66.568,637.408 C70.4513231,637.408 71.1043806,645.318854 71.1235555,651.793585 L71.1235555,652.716844 C71.1101703,660.341795 70.8039467,670.456 66.568,670.456 Z" id="path-1"></path>
+        <filter x="-8.7%" y="-3.7%" width="111.6%" height="105.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-2" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-12-Pro-Max" transform="translate(-47.000000, -616.000000)" fill-rule="nonzero">
+            <g id="6">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#000000" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

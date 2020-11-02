@@ -1,0 +1,31 @@
+extends layout
+block content
+  div(id="loader-wrap")
+    div(class="loader")
+      img(class='mono-loader' width="100px" src="/images/border-monogram.svg")
+      img(class="r" width="50px" src="/images/r.svg")
+
+  div(class="calendar-container")
+    each day in passedDays
+      div(class="row")
+        div(class={active: day.isToday, number: true})
+          img(src="/images/numbers/highlighted/#{day.day}.svg")
+        div(class="meta")
+          div(class="coffee")
+            strong= day.coffee
+          div(class="roaster")= day.roaster
+          div(class="roaster-location")= day.location
+    
+    each day in remainingDays
+      div(class="row remaining-days")
+        div(class="number")
+          img(src="/images/numbers/standard/#{day}.svg")
+        div(class="meta")
+    
+  div(class="revolver-banner")
+    div
+      img(src="/images/revolver.svg")
+    p ADVENT CALENDAR 2020
+
+  div(class="monogram")
+    img(src="/images/monogram.svg")

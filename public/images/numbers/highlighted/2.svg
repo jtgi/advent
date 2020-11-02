@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="55px" viewBox="0 0 34 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>2</title>
+    <defs>
+        <path d="M80.372,211 L80.372,200.188 L80.1,200.188 C79.556,201.14 78.196,201.888 77.312,201.888 L61.264,201.888 L61.264,201.616 C66.5,197.74 81.936,183.188 81.936,170.88 C81.936,158.436 71.396,157.416 67.452,157.416 C59.156,157.416 55.076,162.176 51.676,169.52 L51.676,171.152 C53.58,168.432 56.572,165.984 61.128,165.984 C67.044,165.984 70.104,170.472 70.104,175.572 C70.104,185.636 56.164,203.656 50.248,210.728 L50.248,211 L80.372,211 Z" id="path-1"></path>
+        <filter x="-9.5%" y="-3.7%" width="112.6%" height="105.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-2" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-12-Pro-Max" transform="translate(-48.000000, -156.000000)" fill-rule="nonzero">
+            <g id="2">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#000000" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

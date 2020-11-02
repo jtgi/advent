@@ -1,4 +1,10 @@
 
 window.addEventListener('load', () => {
-    $('#loader-wrap').fadeOut('fast');
+    if (document.getElementsByClassName('ready').length) {
+        $('#loader-wrap').fadeOut('fast');
+    }
+
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".target").offset().top
+    }, 500);
 });

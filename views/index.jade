@@ -1,14 +1,16 @@
 extends layout
 block content
   div(id="loader-wrap")
-    div(class="loader")
-      img(class='mono-loader' width="100px" src="/images/border-monogram.svg")
+    div(class={loader: true, ready})
+      img(class='mono-loader' width="100px" src="/images/border-monogram-white.svg")
       img(class="r" width="50px" src="/images/r.svg")
+      br
+      p ADVENT 2020
 
   div(class="calendar-container")
-    each day in passedDays
-      div(class="row")
-        div(class={active: day.isToday, number: true})
+    each day in revealed
+      div(class="row revealed")
+        div(class={active: day.today, target: day.target, number: true})
           img(src="/images/numbers/highlighted/#{day.day}.svg")
         div(class="meta")
           div(class="coffee")
@@ -16,10 +18,10 @@ block content
           div(class="roaster")= day.roaster
           div(class="roaster-location")= day.location
     
-    each day in remainingDays
-      div(class="row remaining-days")
+    each day in remaining
+      div(class={row: true, 'remaining-days': true, target: day.target})
         div(class="number")
-          img(src="/images/numbers/standard/#{day}.svg")
+          img(src="/images/numbers/standard/#{day.day}.svg")
         div(class="meta")
     
   div(class="revolver-banner")
@@ -27,5 +29,5 @@ block content
       img(src="/images/revolver.svg")
     p ADVENT CALENDAR 2020
 
-  div(class="monogram")
+  div(class="monogram current-day")
     img(src="/images/monogram.svg")

@@ -1,1 +1,4 @@
 .DS_Store
+.env
+service_account_credentials.json
+node_modules

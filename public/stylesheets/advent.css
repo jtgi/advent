@@ -7,7 +7,6 @@ body {
 }
 
 .calendar-container {
-  max-width: 1000px;
   margin: 0 auto;
   padding-bottom: 250px;
 }
@@ -15,6 +14,8 @@ body {
 .row {
   display: flex;
   width: 100%;
+  height: 150px;
+  align-items: center;
 }
 
 .row.remaining-days .number > img {
@@ -23,31 +24,30 @@ body {
 
 .number {
   width: 150px;
-  height: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 33px;
-  vertical-align: middle;
 }
 
-.number.active {
-  background-image: url('../images/border-monogram.svg');
-  background-size: min(80%, 12vh);
+.revealed .number.active {
+  background-image: url('../images/border-monogram-black.svg');
+  background-size: 130px;
   background-repeat: no-repeat;
-  background-position: 50% 13%;
+  background-position: 50% 50%;
 }
 
 .number > img {
-  max-width: min(100px, 11vw);
-  max-height: min(100px, 11vw);
+  max-width: min(150px);
+  max-height: min(150px);
 }
 
 .meta {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex: 1;
   font-size: min(28px, 5vw);
-  height: 120px;
 }
 
 .revolver-banner {
@@ -82,7 +82,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: #9F101E;
+    background: #131313;
 }
 
 #loader-wrap .loader {
@@ -97,18 +97,28 @@ body {
   right: 0;
 }
 
+.loader p {
+  color: #e4e4e4;
+  font-size: 0.6rem;
+  margin-top: 15px;
+  opacity: 0.5;
+  letter-spacing: 1;
+}
+
 #loader-wrap .loader .mono-loader {
-  animation: circle 5s linear infinite;
+  animation: circle 20s linear infinite;
   width: 125px;
   height: 125px;
+  color: white;
 }
 
 #loader-wrap .loader .r {
   position: absolute;
   top: 28px;
-  left: 65px;
+  left: 67px;
   width: 70px;
   height: 70px;
+  color: white;
 }
 
 @keyframes circle {

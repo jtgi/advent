@@ -1,60 +1,67 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const moment = require('moment');
+const { getCoffees } = require('./clients/coffee-client');
+require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express();
+const start = moment('2020-12-01');
+const today = process.env.FAKE_TODAY ? moment(process.env.FAKE_TODAY) : moment();
 
-var app = express();
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-const passedDays = [
-  {
-    day: 1,
-    coffee: 'coffee1',
-    roaster: 'barn',
-    location: 'berlin, germany'
-  },
-  {
-    day: 2,
-    isToday: true,
-    coffee: 'coffee2',
-    roaster: 'heart',
-    location: 'wayward, germany'
+app.get('/', async function (req, res, next) {
+  const day = getTargetDay();
+  const data = await getCalendar(day);
+  res.render('index', data);
+});
+
+app.get('/:day', async function (req, res, next) {
+  const day = getTargetDay(req.params.day);
+  const data = await getCalendar(day);
+  res.render('index', data);
+});
+
+function getTargetDay(dayParam) {
+  if (!dayParam) {
+    return Math.max(1, today.date() - 1);
   }
-];
 
-const remainingDays = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+  let day = parseInt(dayParam, 10);
+  if (isNaN(day)) {
+    day = today.date();
+  }
 
-// routes
-app.get('/', function (req, res, next) {
-  res.render('index', { passedDays, remainingDays });
-})
+  return Math.max(1, day - 1);
+}
 
+async function getCalendar(targetDay) {
+  const coffees = await getCoffees(targetDay, today);
+  const revealed = coffees.filter(c => c.date.isSameOrBefore(today));
+  const remaining = coffees.slice(revealed.length).map(d => ({ day: d.day, target: d.target }));
+  const ready = today.isSameOrAfter(start);
 
-// catch 404 and forward to error handler
+  return {
+    revealed,
+    remaining,
+    ready
+  }
+}
+
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-// error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });

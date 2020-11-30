@@ -1,7 +1,7 @@
 const { getAuthToken, getSpreadSheetValues } = require('./sheets-client');
-const moment = require('moment');
 
-async function getCoffees(targetDay, today) {
+async function getCoffees(targetDay, today, timezone) {
+    const moment = require('moment-timezone');
     const auth = await getAuthToken();
     const res = await getSpreadSheetValues(
         process.env.SHEET_ID,
@@ -10,10 +10,9 @@ async function getCoffees(targetDay, today) {
     );
 
     const coffees = res.data.values;
-    const headers = coffees[0];
 
     return coffees.slice(1).map(row => {
-        const date = moment(row[0], 'MM/DD/YYYY');
+        const date = moment.tz(row[0].replace(/\//g, '-'), timezone);
 
         return {
             date: date,

@@ -7,27 +7,28 @@ block content
       br
       p(id='countdown')
 
-  div(class="calendar-container")
-    each day in revealed
-      div(class="row revealed")
-        div(class={active: day.today, target: day.target, number: true})
-          img(src="/images/numbers/highlighted/#{day.day}.svg")
-        div(class="meta")
-          div(class="coffee")
-            strong= day.coffee
-          div(class="roaster")= day.roaster
-          div(class="roaster-location")= day.location
-    
-    each day in remaining
-      div(class={row: true, 'remaining-days': true, target: day.target})
-        div(class="number")
-          img(src="/images/numbers/standard/#{day.day}.svg")
-        div(class="meta")
-    
-  div(class="revolver-banner")
-    div
-      img(src="/images/revolver.svg")
-    p ADVENT CALENDAR 2020
+  if ready
+    div(class="calendar-container")
+      each day in revealed
+        div(class="row revealed")
+          div(class={active: day.today, target: day.target, number: true})
+            img(src="/images/numbers/highlighted/#{day.day}.svg")
+          div(class="meta")
+            div(class="coffee")
+              strong= day.coffee
+            div(class="roaster")= day.roaster
+            div(class="roaster-location")= day.location
+      
+      each day in remaining
+        div(class={row: true, 'remaining-days': true, target: day.target})
+          div(class="number")
+            img(src="/images/numbers/standard/#{day.day}.svg")
+          div(class="meta")
+      
+    div(class="revolver-banner")
+      div
+        img(src="/images/revolver.svg")
+      p ADVENT CALENDAR 2020
 
-  div(class="monogram current-day")
-    img(src="/images/monogram.svg")
+    div(class="monogram current-day")
+      img(src="/images/monogram.svg")

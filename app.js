@@ -18,20 +18,33 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 
-app.get('/', get)
-app.get('/:day', get)
+app.get('/', get);
+app.get('/game-genie/:code', cheatMode);
+app.get('/:day', get);
 
 async function get(req, res) {
   const data = await getData(req, res);
   res.render('index', data);
 };
 
+async function cheatMode(req, res) {
+  if (req.params.code) {
+    const ip = process.env.FAKE_IP || ipLookup.getClientIp(req);
+    if (ip !== decode(req.params.code)) {
+      return res.sendStatus(404);
+    }
+  }
+
+  const data = await getData(req, res, true);
+  res.render('index', data);
+}
+
 app.get('/api/coffees', async (req, res) => {
   const data = await (getData(req, res));
   res.json(data);
 });
 
-async function getData(req, res) {
+async function getData(req, res, isCheatMode) {
   const moment = require('moment-timezone');
   const ip = process.env.FAKE_IP || ipLookup.getClientIp(req);
 
@@ -41,16 +54,30 @@ async function getData(req, res) {
     : 'America/Los_Angeles';
 
   const start = moment.tz('2020-12-01 00:00', timezone);
-  const today = !!process.env.FAKE_TODAY
-    ? moment.tz(process.env.FAKE_TODAY, timezone)
-    : moment.tz(timezone);
+
+  let today;
+  if (isCheatMode) {
+    today = moment.tz('2020-12-25 00:00', timezone);
+  } else if (!!process.env.FAKE_TODAY) {
+    today = moment.tz(process.env.FAKE_TODAY, timezone)
+  } else {
+    today = moment.tz(timezone);
+  }
 
   const day = !!req.params.day
     ? getTargetDay(req.params.day, today)
     : Math.max(1, today.date() - 1);
 
-  return await getCalendar(day, start, today, timezone);
+  const cal = await getCalendar(day, start, today, timezone);
+
+  return {
+    ...cal,
+    code: encode(ip)
+  }
 }
+
+const encode = ip => Buffer.from(ip).toString('base64');
+const decode = path => Buffer.from(path, 'base64').toString('ascii');
 
 function getTargetDay(dayParam, today) {
   let day = parseInt(dayParam, 10);

@@ -12,7 +12,7 @@ async function getCoffees(targetDay, today, timezone) {
     const coffees = res.data.values;
 
     return coffees.slice(1).map(row => {
-        const date = moment.tz(row[0].replace(/\//g, '-'), timezone);
+        const date = moment.tz(row[0]), timezone);
 
         return {
             date: date,

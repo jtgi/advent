@@ -9,7 +9,8 @@ html
 
   body
     block content
-    script(src="#{process.env.BROWSER_REFRESH_URL}")
+    if process.env.BROWSER_REFRESH_URL
+      script(src="#{process.env.BROWSER_REFRESH_URL}")
     script(src="https://code.jquery.com/jquery-1.9.1.min.js")
     script(src="/javascripts/ven.js")
     script(src="/javascripts/advent.js")

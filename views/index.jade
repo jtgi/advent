@@ -26,11 +26,54 @@ block content
           div(class="meta")
       
     div(class="revolver-banner")
-      div
-        img(src="/images/revolver.svg")
-      p ADVENT CALENDAR 2020
+      img(src="/images/revolver.svg")
+      p ADVENT CALENDAR 2020 – 
+        a(id="brew-guide-btn" href="google.com")
+          strong BREWING GUIDE 
+          img(width="8" src="/images/open.png")
 
     div(id="csrf")= code
+
+    div(id="brew-guide")
+      div(id="brew-guide-close") X
+      div(class="content")
+        h3 V60
+        p
+          ul
+            li Ground Coffee: 20g
+            li Grind Size: Medium
+            li Water: 320ml (1ml = 1g)
+            li Water Temp: 98C (a minute or two off boil)
+
+        p
+          strong How to -
+          ol
+            li Pre-wet the filter to remove any paper taste.
+            li Add coffee. Shake the V60 gently to create a flat coffee-bed.
+            li Pour 60g of hot water. Using a teaspoon, gently agitate the coffee bed to allow the water to reach all of the dry grinds. Allow 45 seconds, including agitation, before pouring again.
+            li Pour the remaining 260ml of water at a steady, constant rate, pouring in smooth circles, avoiding the edge of the coffee bed. If the water reaches the top of the filter, stop pouring long enough to allow it to drain a few centimeters before finishing the pour.
+            li When you reach the full 320ml, gently spin the V60.
+            li Drink and enjoy!
+
+        hr
+
+        h3 French Press
+        p
+          ul
+            li Ground Coffee: 20g
+            li Grind Size: Medium-Fine
+            li Water: 320ml (1ml = 1g)
+            li Water Temp: 98C (a minute or two off boil)
+
+        p
+          strong How to -
+          ol
+            li Pre-heat the French Press with hot water, then discard.
+            li Add coffee. Add all the water, pouring aggressively to ensure the entire coffee-bed gets saturated. Start a timer for 4 minutes. Place the lid on, but leave the plunger up.
+            li After 4 minutes, gently stir the crust of coffee that has floated to the top. Using two spoons, remove the light foam that remains on top (like this).
+            li Place the lid back on, lowering the plunger until it is just sitting at the top of the brew. Don't plunge!
+            li The coffee can now be poured and enjoyed! 
+            li For an even cleaner cup, with less sediment, leave it for 2-8 more minutes before pouring. Over-extraction won't occur, but the suspended grinds will sink to the bottom.
 
     div(class="monogram current-day")
       img(id="monobutton" src="/images/monogram.svg")

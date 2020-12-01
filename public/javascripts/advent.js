@@ -8,6 +8,16 @@ window.addEventListener('load', () => {
         $('#countdown').countdown({ until });
     }
 
+    $('#brew-guide-btn').click(e => {
+        e.preventDefault();
+        $("#brew-guide").fadeIn(100);
+        return false;
+    });
+
+    $('#brew-guide-close').click(() => {
+        $("#brew-guide").fadeOut(100);
+    })
+
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".target").offset().top
     }, 500);

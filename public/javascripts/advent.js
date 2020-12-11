@@ -45,14 +45,19 @@ window.addEventListener('load', () => {
         window.location.href = `/game-genie/${csrf}`;
     });
 
-    const unlock = () => {
+    const unlock = method => {
         $('#monobutton').addClass('spin');
         $('.number').addClass('spin');
         so.play();
+
+        if (gtag) {
+            gtag('event', 'unlock-all', { method });
+        }
+
     }
 
-    $('#monobutton').click(createClickHandler(10, 3000, unlock));
-    new Konami(unlock);
+    $('#monobutton').click(createClickHandler(10, 3000, () => unlock('monogram')));
+    new Konami(() => unlock('konami'));
 });
 
 function createClickHandler(n, interval, callback) {

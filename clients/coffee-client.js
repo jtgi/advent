@@ -22,7 +22,8 @@ async function getCoffees(targetDay, today, timezone) {
             coffee: row[1],
             roaster: row[2],
             location: row[3],
-            link: row[4]
+            link: row[4],
+            coffeeLink: row[5],
         }
     }
     );

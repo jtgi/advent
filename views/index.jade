@@ -15,8 +15,17 @@ block content
             img(src="/images/numbers/highlighted/#{day.day}.svg")
           div(class="meta")
             div(class="coffee")
-              strong= day.coffee
-            div(class="roaster")= day.roaster
+              if day.coffeeLink
+                a(href="#{day.coffeeLink}" target="_blank")
+                  strong= day.coffee
+              else
+                strong= day.coffee
+            div(class="roaster")
+              if day.link
+                a(href="#{day.link}" target="_blank")= day.roaster
+              else
+                = day.roaster
+
             div(class="roaster-location")= day.location
       
       each day in remaining
@@ -28,7 +37,7 @@ block content
     div(class="revolver-banner")
       img(src="/images/revolver.svg")
       p ADVENT CALENDAR 2020 – 
-        a(id="brew-guide-btn" href="google.com")
+        a(id="brew-guide-btn" href="#")
           strong BREWING GUIDE 
           img(width="8" src="/images/open.png")
 

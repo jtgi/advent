@@ -57,7 +57,18 @@ a:link, a:visited, a:active {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #9F101E;
+  background-color: black;
+}
+
+#brew-guide-btn:link, #brew-guide-btn:visited, #brew-guide-btn:active {
+  color: black;
+  text-decoration: none;
+}
+
+a#brew-guide-btn:hover {
+  color: black;
+  background-color: white;
 }
 
 @media (max-width: 576px) {
